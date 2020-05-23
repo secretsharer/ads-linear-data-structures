@@ -18,10 +18,6 @@ class DLLQueue {
    * @returns {ticket} Cancellation ticket
    */
   enqueue(element) {
-    // const ticket = this.tail;
-    // this.storage.insertTail(element);
-    // this.tail += 1;
-    // return ticket;
     return this.storage.insertTail(element);
   }
 
@@ -32,15 +28,6 @@ class DLLQueue {
    * @returns Stored element
    */
   cancel(ticket) {
-    // let node = _sentinel.next;
-    // while (node < _tail) {
-    //   if (node === ticket) {
-    //     node = undefined;
-    //     this.cancelCount ++;
-    //   }
-    //   node = node.next;
-    // }
-    // return node;
     return this.storage.remove(ticket);
   }
 
@@ -75,15 +62,6 @@ class DLLQueue {
    * @param {forEachCallback} callback Function to invoke
    */
   forEach(callback) {
-    // let skip = 0;
-    // for (let i = this.head; i < this.tail, i++;) {
-    //     if (i === undefined) {
-    //       skip++
-    //       continue;
-    //     }
-    //     const index = i - this.head - skip;
-    //     callback(i, index, this);
-    // }
     this.storage.forEach(callback, this);
   }
 }

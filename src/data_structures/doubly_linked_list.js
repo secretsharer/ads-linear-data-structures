@@ -32,22 +32,15 @@ class DoublyLinkedList {
 
   insertHead(element) {
     const node = new this.Node({element, next: this._head(), prev: this._sentinel});
-    // let newNode = new DLLNode({});
     this._head().prev = node;
-    // newNode.next = this._head;
-    // this._head.prev = newNode;
     this._sentinel.next = node;
-    // this._head = newNode;
     return node;
   }
 
   insertTail(element) {
     const node = new this.Node({element, next: this._sentinel, prev: this._tail()});
-    // let newNode = new DLLNode({});
     this._tail().next = node;
-    // newNode.prev = this._tail;
     this._sentinel.prev = node;
-    // this._tail.next = newNode;
    return node;
   }
 
@@ -66,15 +59,6 @@ class DoublyLinkedList {
   }
 
   forEach(callback, container = this) {
-    // let skip = 0;
-    // for (let i = this.head; i < this.tail, i++;) {
-    //     if (i === undefined) {
-    //       skip++
-    //       continue;
-    //     }
-    //     const index = i - this.head - skip;
-    //     callback(i, index, this);
-    // }
     let i = 0;
     let node = this._head();
     while (node !== this._sentinel) {
@@ -85,12 +69,6 @@ class DoublyLinkedList {
   }
 
   count() {
-  //   let count = 0;
-  //   while (Node._head < Node._tail) {
-  //     count ++;
-  //   }
-  //   return this.count;
-  // }
     let count = 0;
     this.forEach(() => count += 1);
     return count;
